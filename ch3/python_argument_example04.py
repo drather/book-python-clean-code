@@ -1,4 +1,4 @@
-USERS = [(i, f"first_name_{i}", f"last_name_{i}") for i in range(1_000)]
+USERS = [(i, f"first_name_{i}", f"last_name_{i}") for i in range(1000)]
 
 
 class User:
@@ -27,4 +27,3 @@ def users_from_rows(dbrows) -> list:
         User(user_id, first_name, last_name)
         for (user_id, first_name, last_name) in dbrows
     ]
-
