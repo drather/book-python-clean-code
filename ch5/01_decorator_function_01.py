@@ -25,3 +25,13 @@ def retry(operation):
         raise last_raised
 
     return wrapped
+
+
+@retry
+def run_operation(task):
+    """
+    실행 중 예외가 발생할 것 같은 특정 작업 실행
+    :param task:
+    :return:
+    """
+    return task.run()
