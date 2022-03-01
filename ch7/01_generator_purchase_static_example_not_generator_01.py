@@ -48,7 +48,7 @@ class PurchaseStats:
         )
 
 
-def _load_purchases(filename):
+def _load_purchases_not_generator(filename):
     purchases = []
     with open(filename) as f:
         for line in f:
@@ -58,4 +58,8 @@ def _load_purchases(filename):
     return purchases
 
 
-
+def _load_purchases_with_generator(filename):
+    with open(filename) as f:
+        for line in f:
+            *_, price_row = line.partition(",")
+            yield float(price_row)
