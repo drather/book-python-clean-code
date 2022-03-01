@@ -47,3 +47,15 @@ class PurchaseStats:
             f"{self.max_price}, {self.avg_price}"
         )
 
+
+def _load_purchases(filename):
+    purchases = []
+    with open(filename) as f:
+        for line in f:
+            *_, price_row = line.partition(",")
+            purchases.append(float(price_row))
+
+    return purchases
+
+
+
